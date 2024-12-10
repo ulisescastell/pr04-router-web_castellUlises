@@ -15,19 +15,16 @@ const router = createRouter({
       path: '/destination/:id',
       name: 'destination',
       component: DestinationDetail,
+      props: route => ({ id: parseInt(route.params.id, 10) }),
       children: [
         {
           path: 'experience/:slug',
           name: 'experience',
           component: ExperienceDetails,
+          props: route => ({ slug: route.params.slug.toLowerCase() }),
         },
-      ]
+      ],
     },
-
-    { path: '/dashboard', name: 'Dashboard'},
-    { path: '/itb', name: 'ITB'}
-
-
 
   ],
 })
