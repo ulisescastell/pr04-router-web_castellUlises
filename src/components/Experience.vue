@@ -1,8 +1,8 @@
+
 <script setup>
 import { destinations } from '@/data.json'
 import { computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
-import DestinationDetail from './DestinationDetail.vue';
+import { useRoute } from 'vue-router';
 
 const props = defineProps({
   id: Number
@@ -15,7 +15,6 @@ const destination = computed(() => {
     return destination.id == props.id
   })
 })
-
 
 </script>
 
